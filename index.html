@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>♡ For Juni <3 ♡</title>
+  <style>
+    li {
+      color:#5eb4b0;
+      padding: 15px;
+      font-weight:bold;
+
+    }
+    :root {
+      --primary: #c94b4b;
+      --accent: #f2d9d0;
+      --background: linear-gradient(to bottom right, #f6f3f3, #e4d2c6);
+      --text: #44322d;
+      --card-bg: rgba(255, 255, 255, 0.95);
+    }
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    #hf {
+      color: var(--primary);
+      font-weight: bold;
+    }
+    .hide { display:none; }
+    .distance-meter {
+      background: var(--card-bg);
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      font-size: 18px;
+      margin-top: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: absolute;
+      top: 20px;
+      left: 5px;
+      color: var(--primary);
+    }
+    .message-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin-top: 4rem;
+    }
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .heart {
+      font-size: 3rem;
+      margin-top: 1rem;
+      animation: heartbeat 1.5s infinite;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+    .fade {
+      opacity: 0;
+      transition: opacity 4s ease;
+    }
+    .fade.show {
+      opacity: 1;
+    }
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #a73636;
+    }
+    nav {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav button {
+      margin: 0.5rem;
+    }
+    section {
+      background: var(--card-bg);
+      margin: 2rem 0;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      max-width: 600px;
+    }
+    ul, ol {
+      text-align: left;
+    }
+    #password-form input {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="password-form">
+    <h2 id="hf">Secret page only for JUNI!!! ENTER PASSWORD!!!!!</h2>
+    <input type="password" id="password-input" placeholder="Password (i love you)">
+    <br/>
+    <button onclick="CheckPassword()">Enter</button>
+  </div>
+
+  <div id="hidden-content" class="fade hide">
+    <div class="distance-meter">
+      Distance between us: <strong>8,704</strong>
+    </div>
+    <div class="message-card">
+      <h1>HELLO JUNI, WELCOME TO THE SITE DEDICATED TO YOU ❤️</h1>
+      <p id="random-quote">I love you!</p>
+      <button onclick="showRandomQuote()">Click to be told how much I love you</button>
+      <div class="heart">💖</div>
+    </div>
+
+    <nav>
+      <button onclick="showSection('letter')">A Letter to Juni</button>
+      <button onclick="showSection('bucket')">Bucket List</button>
+      <button onclick="showSection('reasons')">Secret W.I.P</button>
+    </nav>
+
+    <section id="letter" class="hide">
+      <h2>A (virtual) letter to the love of my life ❤️</h2>
+      <ul>
+        I understand this isn't the form you want to receive a letter for, but I wanted to if I can to express my love to you in every way possible online and physically. This does not count as the best kind of cutesy letter but it's not nor will it ever be my last it's more of something to placate the time till life allows us to exchange physical letters. I may have not have touched this letter physically but I will pour my heart into it anyways. <br> <br> You honestly caused such a shift in my life that no matter how much I read the English dictionary would I ever find the words to describe it. You made me reflect on the past parts of my life wondering if I was even whole before I met you. I will be honest, I've been a 'romantic' guy throughout my life until I was burnt out bad by my last relationship and I had been feeling immense guilt in not providing for you the effort you deserve, yet you always appreciate me to no end which just, is peaceful and oh so comforting, knowing I can do better and will be doing better and that you would wait on me till I improve just brings peace for me that i really lacked in many of my relationships. Not saying that I'll be complacent but it's more like that you appreciate me regardless and that makes me want to love you even more. To try harder even more. The shift that I kept talking about in my life, before I met you, life was genuinely dull and I felt like I was on autopilot for so long. I had been dissociated from everyone and everything, just burnt out and fatigued. Then you came and completely flipped my life around. You and I went so fast from "man this stranger is dope cant wait to talk to them later" to being so madly in love in a blink of an eye. I do not think how fast we fell in love is anything bad but in fact the opposite, you sincerely made me feel like I can talk to you, that relationships doesn't have to be something scary and insufferable, you made me remember and realize how one is supposed to feel when he's being truly loved. I am grateful to no end for that and as long as our love is mutual, I will love you for as long as I draw breath. The shift that you caused in my life was giving me purpose and hope, someone to look forward to, someone that I know I will be able to just let my guard down around. What really breaks my hurt is the letting guard down part.. People around you through your life being complacent and never trying, that's not what I by letting my guard down. Loving you throughout this whole rollercoaster has just made my heart break for you a million times over, someone like you deserves and always has deserved to be loved unconditionally, in particular from those close to you. It breaks my heart so much when you feel the need to apologize to me when you feel like you are an 'inconvenience' or 'annoying' in any form. I promise Juni, my love, my life, the light that shined brightly upon dull life, you are not hard to love despite what others have made you feel. It should've always been a right and expected for you to be treated, to be loved, to receive acts of service and treated in your own love language, to be heard and listened to, it's far beyond fair what you had given everyone and what they gave you in return. I promise I appreciate every single word and effort I've received from you, I have never and never will take you for granted and will always try to court you. <br><br> You have given me everything I've been striving lately forward Juni, despite the distance, despite whatever factors may be there, despite my own life and the baggage that comes with it, I promise to love you with all of my heart. Thank you for being in my life. 
+        
+      </ul>
+    </section>
+
+    <section id="bucket" class="hide">
+      <h2>Our Bucket List <:3 </h2>
+      <ul>
+        <li>Meet each other ;3 [ ]</li>
+        <li>Promise Ring [ ] </li>
+        <li>GET MARRIED [ ]</li>
+        <li>Move to Vermont [ ] </li>
+        <li>Read tons of books together [ ] </li>
+        <li>Travel around the world [ ] </li>
+        <li>Gift her a flower for each day I make her wait [ ] </li>
+        <li>CATS(?) [ ]</li>
+        <li>Take Juni out on countless of dates because she deserves them [ ] </li>
+        <li>See northern lights [ ]</li>
+      </ul>
+    </section>
+
+    <section id="reasons" class="hide">
+      <h2>I told you its secret smh its not out yet!!</h2>
+      <ol>
+        <li>But I'll always update this site!</li>
+        <li>For a solid portion of this site, I was just listening to the playlist you made for me while being completely smitten (the rest was watching endless html tutorials) </li>
+        <li>I love you</li>
+        
+      </ol>
+    </section>
+  </div>
+
+  <script>
+    function CheckPassword() {
+      const correctpassword = "prettiestgirlalive";
+      const entered = document.getElementById("password-input").value;
+      if (entered === correctpassword) {
+        document.getElementById("password-form").classList.add("hide");
+        document.getElementById("hidden-content").classList.remove("hide");
+        setTimeout(() => {
+          document.getElementById("hidden-content").classList.add("show");
+        }, 50);
+      } else {
+        alert("Wrong Password, who tf are you kid (unless its you pookie i love you)");
+      }
+    }
+
+    const quotes = [
+      "I LOVE YOU SO MUCH BABY GORL 💖",
+      "I LOVE YOU TO WHERE I WOULD DO A TRIPLE BACKFLIP WITHOUT KNOWING HOW TO FOR YOU",
+      "I LOVE YOU TO THE POINT WHERE I'D ALWAYS RUIN MY SLEEP SCHEDULE FOR YOU",
+      "I LOVE YOU ABOVE 10000000000000000% PERCENT!",
+      "secret message juni is gay (and loveable)",
+      "there's a 1/10 chance you see this each click and a 1000000/10 chance that I love YOU!",
+      "I LOVE YOU AS MUCH AS THE OCEAN",
+      "I LOVE YOU SO MUCH TO THE POINT WHERE I CANT STORE ALL MY LOVE IN YOU SINCE YOU ARE TOO PETITE",
+      "I LOVE YOU TO THE POINT WHERE YOU ARE MY MAIN WORKOUT MOTIVATION",
+      "I LOVE YOU AND HEART YOU AND CHERISH YOU SO BEYOND WORDS I WILL FRICKING FIND A WAY TO COME TO AMERICA"
+      
+    ];
+
+    function showRandomQuote() {
+      const picked = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById("random-quote").innerText = picked;
+    }
+
+    function showSection(sectionId) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.add('hide'));
+      document.getElementById(sectionId).classList.remove('hide');
+      window.scrollTo({top: 0, behavior: "smooth"});
+    }
+  </script>
+</body>
+</html>
