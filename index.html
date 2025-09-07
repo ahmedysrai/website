@@ -48,7 +48,10 @@
       color: var(--primary);
       font-weight: bold;
     }
-    .hide { display:none; }
+    .hide {
+  display: none !important;
+}
+
 
     /* Distance meter pinned top-left */
     .distance-meter {
@@ -139,7 +142,7 @@
     ul, ol {
       text-align: left;
     }
-    #password-form {
+#password-form {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -149,7 +152,12 @@
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   text-align: center;
+  z-index: 9999;          /* always on top */
+  width: 90%;             /* responsive width */
+  max-width: 400px;       /* no bigger than this */
+  box-sizing: border-box; /* padding doesn’t expand it */
 }
+
 
     #password-form input {
       padding: 0.5rem;
@@ -378,6 +386,7 @@
   </script>
 </body>
 </html>
+
 
 
 
