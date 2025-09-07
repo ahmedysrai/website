@@ -37,6 +37,17 @@
       text-align: center;
       overflow-x: hidden;
     }
+    body {
+  background: linear-gradient(-45deg, #f6f3f3, #e4d2c6, #f2d9d0, #f6f3f3);
+  background-size: 400% 400%;
+  animation: bgShift 15s ease infinite;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
     #hf {
       color: var(--primary);
       font-weight: bold;
@@ -58,14 +69,14 @@
     }
 
     .message-card {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      max-width: 600px;
-      margin-top: 4rem;
-      position: relative;
-    }
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 600px;
+  margin: 4rem auto 0 auto; /* center horizontally */
+  position: relative;
+}
     h1 {
       margin-bottom: 1rem;
       font-size: 2.2rem;
@@ -84,6 +95,11 @@
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.3); }
     }
+    @keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
     .fade {
       opacity: 0;
       transition: opacity 4s ease;
@@ -91,19 +107,17 @@
     .fade.show {
       opacity: 1;
     }
-    button {
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 0.5rem 1rem;
-      margin-top: 1rem;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: background 0.3s ease;
-      font-family: 'Thejonifont', 'Helvetica Neue', sans-serif;
-    }
+   button {
+  background: linear-gradient(270deg, #c94b4b, #a73636, #c94b4b);
+  background-size: 600% 600%;
+  animation: gradientShift 6s ease infinite;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
     button:hover {
       background-color: #a73636;
     }
@@ -118,13 +132,13 @@
       margin: 0.5rem;
     }
     section {
-      background: var(--card-bg);
-      margin: 2rem 0;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      max-width: 600px;
-    }
+  background: var(--card-bg);
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 600px;
+}
     ul, ol {
       text-align: left;
     }
@@ -137,10 +151,13 @@
     }
 
     #hidden-content {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-    }
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers children horizontally */
+}
 
     /* Splash text like Minecraft */
     #splash {
@@ -350,3 +367,4 @@
   </script>
 </body>
 </html>
+
