@@ -24,10 +24,14 @@
       --text: #44322d;
       --card-bg: rgba(255, 255, 255, 0.95);
     }
+
+    /* merged body styles */
     body {
       margin: 0;
       font-family: 'Thejonifont', 'Helvetica Neue', sans-serif;
-      background: var(--background);
+      background: linear-gradient(-45deg, #f6f3f3, #e4d2c6, #f2d9d0, #f6f3f3);
+      background-size: 400% 400%;
+      animation: bgShift 15s ease infinite;
       color: var(--text);
       display: flex;
       flex-direction: column;
@@ -37,17 +41,13 @@
       text-align: center;
       overflow-x: hidden;
     }
-    body {
-  background: linear-gradient(-45deg, #f6f3f3, #e4d2c6, #f2d9d0, #f6f3f3);
-  background-size: 400% 400%;
-  animation: bgShift 15s ease infinite;
-}
 
-@keyframes bgShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     #hf {
       color: var(--primary);
       font-weight: bold;
@@ -69,14 +69,14 @@
     }
 
     .message-card {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  max-width: 600px;
-  margin: 4rem auto 0 auto; /* center horizontally */
-  position: relative;
-}
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin: 4rem auto 0 auto;
+      position: relative;
+    }
     h1 {
       margin-bottom: 1rem;
       font-size: 2.2rem;
@@ -96,10 +96,10 @@
       50% { transform: scale(1.3); }
     }
     @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     .fade {
       opacity: 0;
       transition: opacity 4s ease;
@@ -107,19 +107,20 @@
     .fade.show {
       opacity: 1;
     }
-   button {
-  background: linear-gradient(270deg, #c94b4b, #a73636, #c94b4b);
-  background-size: 600% 600%;
-  animation: gradientShift 6s ease infinite;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 0.8rem 1.2rem;
-  cursor: pointer;
-  font-size: 1rem;
-}
+    button {
+      background: linear-gradient(270deg, #c94b4b, #a73636, #c94b4b);
+      background-size: 600% 600%;
+      animation: gradientShift 6s ease infinite;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.8rem 1.2rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: 'Thejonifont', 'Helvetica Neue', sans-serif;
+    }
     button:hover {
-      background-color: #a73636;
+      filter: brightness(1.1);
     }
     nav {
       margin-top: 2rem;
@@ -132,13 +133,13 @@
       margin: 0.5rem;
     }
     section {
-  background: var(--card-bg);
-  margin: 2rem auto;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  max-width: 600px;
-}
+      background: var(--card-bg);
+      margin: 2rem auto;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      max-width: 600px;
+    }
     ul, ol {
       text-align: left;
     }
@@ -151,13 +152,13 @@
     }
 
     #hidden-content {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centers children horizontally */
-}
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     /* Splash text like Minecraft */
     #splash {
@@ -225,7 +226,7 @@
         gap: 0.5rem;
       }
       #splash {
-        font-size: 1rem;
+        font-size: 1.2rem;
         right: 0;
         top: 0;
         transform: rotate(15deg);
@@ -260,12 +261,13 @@
       <button onclick="showSection('reasons')">Secret W.I.P</button>
     </nav>
 
+
     <section id="letter" class="hide">
       <h2>A (virtual) letter to the love of my life ❤️</h2>
       <ul> I understand this isn't the form you want to receive a letter for, but I wanted to if I can to express my love to you in every way possible online and physically. This does not count as the best kind of cutesy letter but it's not nor will it ever be my last it's more of something to placate the time till life allows us to exchange physical letters. I may have not have touched this letter physically but I will pour my heart into it anyways. <br> <br> You honestly caused such a shift in my life that no matter how much I read the English dictionary would I ever find the words to describe it. You made me reflect on the past parts of my life wondering if I was even whole before I met you. I will be honest, I've been a 'romantic' guy throughout my life until I was burnt out bad by my last relationship and I had been feeling immense guilt in not providing for you the effort you deserve, yet you always appreciate me to no end which just, is peaceful and oh so comforting, knowing I can do better and will be doing better and that you would wait on me till I improve just brings peace for me that i really lacked in many of my relationships. Not saying that I'll be complacent but it's more like that you appreciate me regardless and that makes me want to love you even more. To try harder even more. The shift that I kept talking about in my life, before I met you, life was genuinely dull and I felt like I was on autopilot for so long. I had been dissociated from everyone and everything, just burnt out and fatigued. Then you came and completely flipped my life around. You and I went so fast from "man this stranger is dope cant wait to talk to them later" to being so madly in love in a blink of an eye. I do not think how fast we fell in love is anything bad but in fact the opposite, you sincerely made me feel like I can talk to you, that relationships doesn't have to be something scary and insufferable, you made me remember and realize how one is supposed to feel when he's being truly loved. I am grateful to no end for that and as long as our love is mutual, I will love you for as long as I draw breath. The shift that you caused in my life was giving me purpose and hope, someone to look forward to, someone that I know I will be able to just let my guard down around. What really breaks my hurt is the letting guard down part.. People around you through your life being complacent and never trying, that's not what I by letting my guard down. Loving you throughout this whole rollercoaster has just made my heart break for you a million times over, someone like you deserves and always has deserved to be loved unconditionally, in particular from those close to you. It breaks my heart so much when you feel the need to apologize to me when you feel like you are an 'inconvenience' or 'annoying' in any form. I promise Juni, my love, my life, the light that shined brightly upon dull life, you are not hard to love despite what others have made you feel. It should've always been a right and expected for you to be treated, to be loved, to receive acts of service and treated in your own love language, to be heard and listened to, it's far beyond fair what you had given everyone and what they gave you in return. I promise I appreciate every single word and effort I've received from you, I have never and never will take you for granted and will always try to court you. <br><br> You have given me everything I've been striving lately forward Juni, despite the distance, despite whatever factors may be there, despite my own life and the baggage that comes with it, I promise to love you with all of my heart. Thank you for being in my life. </ul>
     </section>
 
-    <section id="bucket" class="hide">
+  <section id="bucket" class="hide">
       <h2>Our Bucket List <:3 </h2>
       <ul>
         <li>Meet each other ;3 [ ]</li>
@@ -336,14 +338,15 @@
     // Splash text like Minecraft
     const splashes = [
       "100% Gluten Free",
-  "Won't make your tummy explode!",
-  "Now with extra love and schizo ;3",
-  "Made for Juni!",
-  "100% Cuter",
-  "*BITES YOU!*",
-  "Powered by GAY",
-  "So much love inside UwU",
-  "Try clicking the button!",    ];
+      "Won't make your tummy explode!",
+      "Now with extra love and schizo ;3",
+      "Made for Juni!",
+      "100% Cuter",
+      "*BITES YOU!*",
+      "Powered by GAY",
+      "So much love inside UwU",
+      "Try clicking the button!"
+    ];
     function setSplash() {
       const splash = splashes[Math.floor(Math.random() * splashes.length)];
       document.getElementById("splash").innerText = splash;
@@ -365,5 +368,3 @@
   </script>
 </body>
 </html>
-
-
