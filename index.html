@@ -5,13 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>♡ For Juni <3 ♡</title>
   <style>
-    #hidden-content {
-  position: relative;
-  z-index: 1;
-}
-
     @font-face {
-      font-family: 'Thejoinfont';
+      font-family: 'Thejonifont';
       src: url('Thejonifont-Regular.woff') format('woff');
       font-weight: normal;
       font-style: normal;
@@ -31,7 +26,7 @@
     }
     body {
       margin: 0;
-      font-family: 'Thejoinfont', 'Helvetica Neue', sans-serif;
+      font-family: 'Thejonifont', 'Helvetica Neue', sans-serif;
       background: var(--background);
       color: var(--text);
       display: flex;
@@ -40,24 +35,28 @@
       justify-content: center;
       min-height: 100vh;
       text-align: center;
+      overflow-x: hidden;
     }
     #hf {
       color: var(--primary);
       font-weight: bold;
     }
     .hide { display:none; }
+
+    /* Distance meter pinned top-left */
     .distance-meter {
+      position: fixed;
+      top: 10px;
+      left: 10px;
       background: var(--card-bg);
       padding: 0.5rem 1rem;
       border-radius: 10px;
-      font-size: 18px;
-      margin-top: 10px;
+      font-size: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      position: absolute;
-      top: 20px;
-      left: 5px;
       color: var(--primary);
+      z-index: 10;
     }
+
     .message-card {
       background: var(--card-bg);
       padding: 2rem;
@@ -65,6 +64,7 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       max-width: 600px;
       margin-top: 4rem;
+      position: relative;
     }
     h1 {
       margin-bottom: 1rem;
@@ -102,7 +102,7 @@
       font-size: 1rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background 0.3s ease;
-      font-family: 'Thejoinfont', 'Helvetica Neue', sans-serif;
+      font-family: 'Thejonifont', 'Helvetica Neue', sans-serif;
     }
     button:hover {
       background-color: #a73636;
@@ -133,53 +133,89 @@
       border-radius: 5px;
       border: 1px solid #ccc;
       margin-top: 0.5rem;
-      font-family: 'Thejoinfont', 'Helvetica Neue', sans-serif;
+      font-family: 'Thejonifont', 'Helvetica Neue', sans-serif;
     }
+
+    #hidden-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    /* Splash text like Minecraft */
+    #splash {
+      position: absolute;
+      top: 10px;
+      right: -20px;
+      transform: rotate(20deg);
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffea00;
+      text-shadow: 2px 2px 0 #000;
+      pointer-events: none;
+    }
+
+    /* Falling hearts background */
     #hearts-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* don’t block clicks */
-  overflow: hidden;
-  z-index: 0; /* keep behind your cards */
-}
-#splash {
-  position: absolute;
-  top: 10px;
-  right: -20px;
-  transform: rotate(20deg);
-  background: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffea00; /* Minecraft yellow */
-  text-shadow: 2px 2px 0 #000;
-  pointer-events: none;
-}
-.message-card {
-  position: relative; /* so #splash positions relative to this card */
-}
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .falling-heart {
+      position: absolute;
+      top: -2rem;
+      font-size: 2rem;
+      color: #ff5e99;
+      animation: fall linear forwards;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
 
-.heart {
-  position: absolute;
-  top: -2rem;
-  font-size: 2rem;
-  color: #ff5e99;
-  animation: fall linear forwards;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
-}
-
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+        font-size: 0.95rem;
+      }
+      .message-card, section {
+        max-width: 100%;
+        margin: 1rem 0;
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+      button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.8rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      #splash {
+        font-size: 1rem;
+        right: 0;
+        top: 0;
+        transform: rotate(15deg);
+      }
+    }
   </style>
 </head>
-<div id="hearts-container"></div>
-
 <body>
   <div id="password-form">
     <h2 id="hf">Secret page only for JUNI!!! ENTER PASSWORD!!!!!</h2>
@@ -192,6 +228,7 @@
     <div class="distance-meter">
       Distance between us: <strong>8,074</strong>
     </div>
+
     <div class="message-card">
       <h1>HELLO JUNI, WELCOME TO THE SITE DEDICATED TO YOU ❤️</h1>
       <div id="splash"></div>
@@ -239,6 +276,9 @@
     </section>
   </div>
 
+  <!-- Hearts background -->
+  <div id="hearts-container"></div>
+
   <script>
     function CheckPassword() {
       const correctpassword = "jooni";
@@ -277,25 +317,10 @@
       document.getElementById(sectionId).classList.remove('hide');
       window.scrollTo({top: 0, behavior: "smooth"});
     }
-    function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.textContent = "💖";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
-  heart.style.animationDuration = (Math.random() * 3 + 4) + "s"; // 4–7 seconds fall
-  document.getElementById("hearts-container").appendChild(heart);
 
-  // remove heart after it falls
-  setTimeout(() => {
-    heart.remove();
-  }, 7000);
-}
-
-// generate a new heart every 400ms
-setInterval(createHeart, 400);
-const splashes = [
-  "100% Gluten Free",
+    // Splash text like Minecraft
+    const splashes = [
+      "100% Gluten Free",
   "Won't make your tummy explode!",
   "Now with extra love and schizo ;3",
   "Made for Juni!",
@@ -303,23 +328,25 @@ const splashes = [
   "*BITES YOU!*",
   "Powered by GAY",
   "So much love inside UwU",
-  "Try clicking the button!",
-  
-];
+  "Try clicking the button!",    ];
+    function setSplash() {
+      const splash = splashes[Math.floor(Math.random() * splashes.length)];
+      document.getElementById("splash").innerText = splash;
+    }
+    window.onload = setSplash;
 
-function setSplash() {
-  const splash = splashes[Math.floor(Math.random() * splashes.length)];
-  document.getElementById("splash").innerText = splash;
-}
-
-// Set splash when site loads
-window.onload = setSplash;
-
+    // Falling hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("falling-heart");
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+      document.getElementById("hearts-container").appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHeart, 400);
   </script>
 </body>
 </html>
-
-
-
-
-
