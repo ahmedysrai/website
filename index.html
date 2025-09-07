@@ -26,21 +26,17 @@
     }
 
     /* merged body styles */
-    body {
-      margin: 0;
-      font-family: 'Thejonifont', 'Helvetica Neue', sans-serif;
-      background: linear-gradient(-45deg, #f6f3f3, #e4d2c6, #f2d9d0, #f6f3f3);
-      background-size: 400% 400%;
-      animation: bgShift 15s ease infinite;
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      overflow-x: hidden;
-    }
+  body {
+  margin: 0;
+  font-family: 'Thejonifont', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(-45deg, #f6f3f3, #e4d2c6, #f2d9d0, #f6f3f3);
+  background-size: 400% 400%;
+  animation: bgShift 15s ease infinite;
+  color: var(--text);
+  min-height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
+}
 
     @keyframes bgShift {
       0% { background-position: 0% 50%; }
@@ -143,6 +139,18 @@
     ul, ol {
       text-align: left;
     }
+    #password-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
     #password-form input {
       padding: 0.5rem;
       border-radius: 5px;
@@ -368,3 +376,4 @@
   </script>
 </body>
 </html>
+
