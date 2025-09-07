@@ -145,6 +145,21 @@
   overflow: hidden;
   z-index: 0; /* keep behind your cards */
 }
+#splash {
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  transform: rotate(20deg);
+  background: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffea00; /* Minecraft yellow */
+  text-shadow: 2px 2px 0 #000;
+  pointer-events: none;
+}
+.message-card {
+  position: relative; /* so #splash positions relative to this card */
+}
 
 .heart {
   position: absolute;
@@ -179,6 +194,7 @@
     </div>
     <div class="message-card">
       <h1>HELLO JUNI, WELCOME TO THE SITE DEDICATED TO YOU ❤️</h1>
+      <div id="splash"></div>
       <p id="random-quote">I love you!</p>
       <button onclick="showRandomQuote()">Click to be told how much I love you</button>
       <div class="heart">💖</div>
@@ -278,10 +294,31 @@
 
 // generate a new heart every 400ms
 setInterval(createHeart, 400);
+const splashes = [
+  "Removed Herobrine",
+  "Check out Terraria!",
+  "Now with extra love 💖",
+  "Made for Juni!",
+  "100% Cuter",
+  "Better than diamonds!",
+  "Powered by HTML",
+  "So much love inside 💌",
+  "Try clicking the button!",
+  "Not a virus, promise"
+];
+
+function setSplash() {
+  const splash = splashes[Math.floor(Math.random() * splashes.length)];
+  document.getElementById("splash").innerText = splash;
+}
+
+// Set splash when site loads
+window.onload = setSplash;
 
   </script>
 </body>
 </html>
+
 
 
 
